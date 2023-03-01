@@ -3,4 +3,8 @@ function getComputerGuess (){
     const computerGuess = Math.floor(Math.random()* options.length)
     return options[computerGuess];
 }
-console.log(getComputerGuess())
+function game(){
+    const playerSelection = prompt("Let's play Rock, Paper Scissors!");
+return playerSelection
+}
+console.log(game())
