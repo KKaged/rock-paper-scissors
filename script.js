@@ -1,10 +1,39 @@
+const playerSelection = "scissors";
 function getComputerGuess (){
     const options = ["rock", "paper", "scissors"];
     const computerGuess = Math.floor(Math.random()* options.length)
     return options[computerGuess];
 }
-function game(){
-    const playerSelection = prompt("Let's play Rock, Paper Scissors!");
-return playerSelection
+function playRound(playerSelection, computerSelection){
+if (playerSelection === computerSelection){
+    return "The game is a tie!";
 }
-console.log(game())
+if (playerSelection === "rock"){
+    if (computerSelection === "paper"){
+        return "Congratulations, you won!";
+    }
+    else {
+        return "Sorry, the computer won!";
+    }
+}
+
+if (playerSelection === "scissors"){
+    if (computerSelection === "paper"){
+        return "Congratulations, you won!";
+    }
+    else {
+        return "Sorry, the computer won!";
+    }
+}
+
+if (playerSelection === "rock"){
+    if (computerSelection === "scissors"){
+        return "Congratulations, you won!";
+    }
+    else {
+        return "Sorry, the computer won!";
+    }
+}
+}
+const computerSelection = getComputerGuess();
+console.log (playRound(playerSelection, computerSelection))
