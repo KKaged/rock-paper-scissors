@@ -1,7 +1,12 @@
 //Defining the moves in the game
 const moves = ["rock", "paper", "scissors"];
 //What the player picks
-const playerSelection = prompt("rock, paper, or scissors?");
+let playerSelection = prompt("rock, paper, or scissors?");
+while (!moves.includes(playerSelection.toLowerCase())) {
+  playerSelection = prompt(
+    "That move does not exist, please enter one of 3 choices: rock, paper or scissors."
+  );
+}
 //What the computer picks
 function getComputerChoice() {
   return moves[Math.floor(Math.random() * moves.length)];
