@@ -1,39 +1,27 @@
-const playerSelection = "scissors";
-function getComputerGuess (){
-    const options = ["rock", "paper", "scissors"];
-    const computerGuess = Math.floor(Math.random()* options.length)
-    return options[computerGuess];
+//Defining the moves in the game
+const moves = ["rock", "paper", "scissors"];
+//What the player picks
+const playerSelection = prompt("rock, paper, or scissors?");
+//What the computer picks
+function getComputerChoice() {
+  return moves[Math.floor(Math.random() * moves.length)];
 }
-function playRound(playerSelection, computerSelection){
-if (playerSelection === computerSelection){
-    return "The game is a tie!";
+//one round
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return "It's a tie!";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    return `You win! ${playerSelection} beats ${computerSelection}!`;
+  } else {
+    return `You lose! ${computerSelection} beats ${playerSelection}!`;
+  }
 }
-if (playerSelection === "rock"){
-    if (computerSelection === "paper"){
-        return "Congratulations, you won!";
-    }
-    else {
-        return "Sorry, the computer won!";
-    }
-}
-
-if (playerSelection === "scissors"){
-    if (computerSelection === "paper"){
-        return "Congratulations, you won!";
-    }
-    else {
-        return "Sorry, the computer won!";
-    }
-}
-
-if (playerSelection === "rock"){
-    if (computerSelection === "scissors"){
-        return "Congratulations, you won!";
-    }
-    else {
-        return "Sorry, the computer won!";
-    }
-}
-}
-const computerSelection = getComputerGuess();
-console.log (playRound(playerSelection, computerSelection))
+const computerSelection = getComputerChoice();
+//shows what the computer picks
+console.log(computerSelection);
+//results
+console.log(playRound(playerSelection, computerSelection));
