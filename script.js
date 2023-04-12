@@ -1,12 +1,30 @@
 //Defining the moves in the game
 const moves = ["rock", "paper", "scissors"];
-//What the player picks
-let playerSelection = prompt("rock, paper, or scissors?");
-while (!moves.includes(playerSelection.toLowerCase())) {
-  playerSelection = prompt(
-    "That move does not exist, please enter one of 3 choices: rock, paper or scissors."
-  );
-}
+const rock = document.querySelector(".rock");
+const scissors = document.querySelector(".scissors");
+const paper = document.querySelector(".paper");
+let playerSelection;
+
+rock.addEventListener("click", () => {
+  console.log(`The computer picks ${computerSelection}`);
+  playerSelection = "rock";
+  console.log(`You picked Rock!`);
+
+  console.log(playRound(playerSelection, computerSelection));
+});
+scissors.addEventListener("click", () => {
+  console.log(`The computer picks ${computerSelection}`);
+  playerSelection = "scissors";
+  console.log("You picked Scissors!");
+  console.log(playRound(playerSelection, computerSelection));
+});
+paper.addEventListener("click", () => {
+  console.log(`The computer picks ${computerSelection}`);
+  playerSelection = "paper";
+  console.log("You picked Paper!");
+  console.log(playRound(playerSelection, computerSelection));
+});
+
 //What the computer picks
 function getComputerChoice() {
   return moves[Math.floor(Math.random() * moves.length)];
@@ -26,7 +44,3 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 const computerSelection = getComputerChoice();
-//shows what the computer picks
-console.log(computerSelection);
-//results
-console.log(playRound(playerSelection, computerSelection));
