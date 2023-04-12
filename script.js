@@ -1,27 +1,27 @@
 //Defining the moves in the game
-const moves = ["rock", "paper", "scissors"];
+const moves = ["Rock", "Paper", "Scissors"];
 const rock = document.querySelector(".rock");
 const scissors = document.querySelector(".scissors");
 const paper = document.querySelector(".paper");
 let playerSelection;
 
 rock.addEventListener("click", () => {
-  console.log(`The computer picks ${computerSelection}`);
-  playerSelection = "rock";
-  console.log(`You picked Rock!`);
+  console.log(`The Computer Picks ${computerSelection}`);
+  playerSelection = "Rock";
+  console.log(`You Picked Rock!`);
 
   console.log(playRound(playerSelection, computerSelection));
 });
 scissors.addEventListener("click", () => {
-  console.log(`The computer picks ${computerSelection}`);
-  playerSelection = "scissors";
+  console.log(`The Computer Picks ${computerSelection}`);
+  playerSelection = "Scissors";
   console.log("You picked Scissors!");
   console.log(playRound(playerSelection, computerSelection));
 });
 paper.addEventListener("click", () => {
-  console.log(`The computer picks ${computerSelection}`);
-  playerSelection = "paper";
-  console.log("You picked Paper!");
+  console.log(`The Computer Picks ${computerSelection}`);
+  playerSelection = "Paper";
+  console.log("You Picked Paper!");
   console.log(playRound(playerSelection, computerSelection));
 });
 
@@ -39,9 +39,9 @@ function playRound(playerSelection, computerSelection) {
       confirmButtonText: "Try Again!",
     });
   } else if (
-    (playerSelection === "rock" && computerSelection === "scissors") ||
-    (playerSelection === "paper" && computerSelection === "rock") ||
-    (playerSelection === "scissors" && computerSelection === "paper")
+    (playerSelection === "Rock" && computerSelection === "Scissors") ||
+    (playerSelection === "Paper" && computerSelection === "Rock") ||
+    (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
     Swal.fire({
       title: "You Win!",
