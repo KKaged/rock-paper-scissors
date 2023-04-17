@@ -4,17 +4,43 @@
 }
 .display{
     margin: auto;
+    display: flex;
     height: 100vh;
     text-align: center;
     background-color: antiquewhite;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.choices{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 35px;
 }
 button{
     width: 175px;
     height: 145px;
     font-size: larger;
     font-weight: bolder;
+    border: solid black;
+    border-bottom-width: 3.5px;
+    border-right-width: 3.5px;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(80, 126, 255);
+    }
+.result{
+    display: flex;
+    flex-direction: row;
+    width: 275px;
+    height: 175px;
+    border: solid black;
+    border-bottom-width: 3.5px;
+    border-right-width: 3.5px;
+    background-color:white;
+    border-radius: 5px;
+    justify-content: center;
 }

@@ -31,32 +31,20 @@ function getComputerChoice() {
 }
 //one round
 function playRound(playerSelection, computerSelection) {
+  let winner;
+
   if (playerSelection === computerSelection) {
-    Swal.fire({
-      title: "It's a tie!",
-      text: `No one wins! It's a tie!`,
-      icon: `warning`,
-      confirmButtonText: "Try Again!",
-    });
+    winner = "It's a tie!";
   } else if (
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Paper" && computerSelection === "Rock") ||
     (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    Swal.fire({
-      title: "You Win!",
-      text: `${playerSelection} beats ${computerSelection}`,
-      icon: "success",
-      confirmButtonText: "Play Again",
-    });
+    winner = `You Win! The Computer Picked ${computerSelection}`;
   } else {
-    // Player loses
-    Swal.fire({
-      title: "You Lose!",
-      text: `${computerSelection} beats ${playerSelection}`,
-      icon: "error",
-      confirmButtonText: "Try Again",
-    });
+    winner = `Computer Wins with ${computerSelection}!`;
   }
+
+  document.querySelector(".result").innerText = winner;
 }
 const computerSelection = getComputerChoice();
